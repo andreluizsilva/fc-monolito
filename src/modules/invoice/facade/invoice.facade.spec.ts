@@ -108,12 +108,12 @@ describe("InvoiceFacade test", () => {
       expect(invoiceDb.id).toBe(input.id);
       expect(invoiceDb.name).toBe(input.name);
       expect(invoiceDb.document).toBe(input.document);
-      expect(invoiceDb.street).toBe(input.street);
-      expect(invoiceDb.number).toBe(input.number);
-      expect(invoiceDb.complement).toBe(input.complement);
-      expect(invoiceDb.zipCode).toBe(input.zipCode);
-      expect(invoiceDb.state).toBe(input.state);
-      expect(invoiceDb.city).toBe(input.city);
+      expect(invoiceDb.address.street).toBe(input.street);
+      expect(invoiceDb.address.number).toBe(input.number);
+      expect(invoiceDb.address.complement).toBe(input.complement);
+      expect(invoiceDb.address.zipCode).toBe(input.zipCode);
+      expect(invoiceDb.address.state).toBe(input.state);
+      expect(invoiceDb.address.city).toBe(input.city);
       expect(invoiceDb.items.length).toBe(2);
       expect(invoiceDb.items[0].id).toBe(input.items[0].id)
       expect(invoiceDb.items[0].name).toBe(input.items[0].name);

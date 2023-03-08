@@ -27,7 +27,8 @@ export default class Invoice extends BaseEntity implements AggregateRoot {
         this._name = props.name;
         this._document = props.document;
         this._address = props.address;
-        this._items = props.items;  
+        this._items = props.items; 
+        this.validate(); 
         this._total = this.total();      
     }
 
@@ -48,23 +49,29 @@ export default class Invoice extends BaseEntity implements AggregateRoot {
         return this._items
     }
     
-    set name(name: string) {
-        this._name = name;
-    }
+    // set name(name: string) {
+    //     this._name = name;
+    // }
 
-    set document(document: string) {
-        this._document = document;
-    }
+    // set document(document: string) {
+    //     this._document = document;
+    // }
 
-    set address(address: Address) {
-        this._address = address;
-    }
+    // set address(address: Address) {
+    //     this._address = address;
+    // }
     
-    set items(items: Product[]) {
-        this._items = items;
-    }
+    // set items(items: Product[]) {
+    //     this._items = items;
+    // }
 
     total(): number {
         return this._items.reduce((acc, item) => acc + item.invoiceItemTotal(), 0)
+    }
+
+    validate(): void {
+        if (this._items.length === 0) {
+            throw new Error("Invoice must have at least one item");
+        }
     }
 }

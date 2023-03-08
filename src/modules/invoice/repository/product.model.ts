@@ -26,4 +26,10 @@ export default class ProductModel extends Model {
 
     @Column({ allowNull: false })
     quantity: number;
+
+    @Column({ allowNull: false })
+    createdAt: Date;
+  
+    @Column({ allowNull: false })
+    updatedAt: Date;
 }

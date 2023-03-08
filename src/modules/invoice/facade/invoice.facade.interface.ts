@@ -5,13 +5,15 @@ export interface FindInvoiceFacadeInputDto {
   export interface FindInvoiceFacadeOutputDto {
     id: string;
     name: string;
-    document: string;   
-    street: string;
-    number: string;
-    complement: string;
-    city: string;
-    state: string;
-    zipCode: string;    
+    document: string;
+    address: {
+      street: string;
+      number: string;
+      complement: string;
+      city: string;
+      state: string;
+      zipCode: string;
+    };
     items: {
       id: string;
       name: string;
@@ -57,7 +59,6 @@ export interface FindInvoiceFacadeInputDto {
       quantity: number;
     }[];
     total: number;
-    createdAt: Date;
   }
   
   export default interface InvoiceFacadeInterface {
