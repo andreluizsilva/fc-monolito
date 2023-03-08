@@ -1,5 +1,14 @@
 import ValueObject from "./value-object.interface";
 
+type AddressProps = {
+  street: string;
+  number: string;
+  zipCode: string;
+  city: string;
+  complement?: string;
+  state: string;
+};
+
 export default class Address implements ValueObject {
     private _street: string;
     private _number: string;
@@ -8,13 +17,13 @@ export default class Address implements ValueObject {
     private _state: string;
     private _city: string;    
 
-    constructor(street: string, number: string, complement: string, zipCode: string, state: string, city: string){
-        this._street = street;
-        this._number = number;
-        this._complement = complement;
-        this._zipCode = zipCode;
-        this._state = state;
-        this._city = city;
+    constructor(address: AddressProps){
+        this._street = address.street;
+        this._number = address.number;
+        this._complement = address.complement;
+        this._zipCode = address.zipCode;
+        this._state = address.state;
+        this._city = address.city;
         this.validate();
     }
 
