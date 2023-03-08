@@ -34,8 +34,7 @@ const props = {
         state: "Invoice 1 state", 
         city: "Invoice 1 city",
       }),    
-    items: [product1, product2],
-    total: 30,
+    items: [product1, product2],  
     createdAt: new Date(),
     updatedAt: new Date(),
 }

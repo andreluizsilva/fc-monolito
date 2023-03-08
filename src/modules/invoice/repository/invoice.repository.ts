@@ -21,13 +21,10 @@ export default class InvoiceRepository implements InvoiceGateway {
       city: invoice.address.city,
       items: invoice.items.map((item) => {
         return {
-          id: item.id.id,
-          invoice_id: invoice.id.id,
+          id: item.id.id,          
           name: item.name,
           price: item.price,
           quantity: item.quantity,
-          createdAt: new Date(),
-          updatedAt: new Date(),
         }        
       }),
       createdAt: new Date(),
@@ -66,7 +63,7 @@ export default class InvoiceRepository implements InvoiceGateway {
             id: new Id(item.id),               
             name: item.name,
             price: item.price,
-            quantity: item.quantity,
+            quantity: item.quantity,            
         });
       }),
       createdAt: invoice.createdAt,

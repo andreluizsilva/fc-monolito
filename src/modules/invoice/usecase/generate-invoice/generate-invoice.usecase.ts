@@ -37,7 +37,7 @@ export default class GenerateInvoiceUseCase {
         }       
 
         const invoice = new Invoice(props);
-        this._invoiceRepository.generate(invoice);
+        await this._invoiceRepository.generate(invoice);
 
         return{
             id: invoice.id.id,

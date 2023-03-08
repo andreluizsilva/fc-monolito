@@ -1,11 +1,8 @@
 import { Sequelize } from "sequelize-typescript";
 import InvoiceFacadeFactory from "../factory/faced.factory";
 import InvoiceModel from "../repository/invoice.model";
-import InvoiceRepository from "../repository/invoice.repository";
 import ProductModel from "../repository/product.model";
-import FindInvoiceUseCase from "../usecase/find-invoice/find-invoice.usecase";
-import GenerateInvoiceUseCase from "../usecase/generate-invoice/generate-invoice.usecase";
-import InvoiceFacade from "./invoice.facade";
+
 
 const input = {
   id: "1",
@@ -30,7 +27,9 @@ const input = {
           price: 20,
           quantity: 1
       }
-  ]
+  ],
+  createdAt: new Date(),
+  updatedAt: new Date(),
 };
 
 describe("InvoiceFacade test", () => {
@@ -65,7 +64,7 @@ describe("InvoiceFacade test", () => {
 
       const output = await invoiceFacade.generate(input);
       
-      const invoiceDb = await InvoiceModel.findOne({where: {id: input.id}, include: "items" });
+      const invoiceDb = await InvoiceModel.findOne({ where: {id: input.id}, include: ["items"] });
   
       expect(invoiceDb).toBeDefined();
       expect(invoiceDb).not.toBeNull();
