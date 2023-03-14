@@ -38,7 +38,6 @@ export interface FindInvoiceFacadeInputDto {
       id: string;
       name: string;
       price: number;
-      quantity: number;
     }[];
   }
 
@@ -56,15 +55,12 @@ export interface FindInvoiceFacadeInputDto {
       id: string;
       name: string;
       price: number;
-      quantity: number;
     }[];
     total: number;
   }
   
   export default interface InvoiceFacadeInterface {
-    find(
-      input: FindInvoiceFacadeInputDto
-    ): Promise<FindInvoiceFacadeOutputDto>;
+    find(input: FindInvoiceFacadeInputDto): Promise<FindInvoiceFacadeOutputDto>;
     generate(input: GenerateInvoiceFacedInputDto): Promise<GenerateInvoiceFacadeOutputDto>;
   }
   

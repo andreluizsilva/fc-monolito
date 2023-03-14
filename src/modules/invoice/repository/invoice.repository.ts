@@ -24,7 +24,6 @@ export default class InvoiceRepository implements InvoiceGateway {
           id: item.id.id,          
           name: item.name,
           price: item.price,
-          quantity: item.quantity,
         }        
       }),
       createdAt: new Date(),
@@ -63,7 +62,6 @@ export default class InvoiceRepository implements InvoiceGateway {
             id: new Id(item.id),               
             name: item.name,
             price: item.price,
-            quantity: item.quantity,            
         });
       }),
       createdAt: invoice.createdAt,

@@ -5,21 +5,18 @@ import Id from "../../@shared/domain/value-object/id.value-object";
 type ProductProps = {
     id?: Id;
     name: string;    
-    price: number;
-    quantity: number;
+    price: number;   
   };
   
   export default class Product extends BaseEntity implements AggregateRoot {
     private _name: string;
     private _price: number;
-    private _quantity: number;
-
+    
   
     constructor(props: ProductProps) {
       super(props.id);
       this._name = props.name;
-      this._price = props.price;
-      this._quantity = props.quantity;
+      this._price = props.price;      
     }
   
     get name(): string {
@@ -29,12 +26,8 @@ type ProductProps = {
     get price(): number {
       return this._price;
     }
-
-    get quantity(): number {
-      return this._quantity;
-    }
-    
+  
     invoiceItemTotal(): number {
-      return this._quantity * this._price;
+      return this._price;
     }
   }

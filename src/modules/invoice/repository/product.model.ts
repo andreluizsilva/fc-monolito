@@ -23,7 +23,5 @@ export default class ProductModel extends Model {
   
     @Column({ allowNull: false })
     price: number;
-
-    @Column({ allowNull: false })
-    quantity: number;   
+    
 }

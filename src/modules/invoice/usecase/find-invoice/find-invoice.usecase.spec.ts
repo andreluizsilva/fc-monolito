@@ -16,13 +16,11 @@ const product1 = {
     id: new Id("1"),
     name: "Invoice 1 item 1",
     price: 10,
-    quantity: 1
 }
 const product2 = {
     id: new Id("2"),
     name: "Invoice 2 item 2",
     price: 20,
-    quantity: 1
 }
 const items = [new Product(product1), new Product(product2)]
 
@@ -68,10 +66,8 @@ describe("find a invoice usecase unit test", () => {
     expect(result.items[0].id).toBe("1");
     expect(result.items[0].name).toBe("Invoice 1 item 1");
     expect(result.items[0].price).toBe(10);
-    expect(result.items[0].quantity).toBe(1);
     expect(result.items[1].id).toBe("2");
     expect(result.items[1].name).toBe("Invoice 2 item 2");
     expect(result.items[1].price).toBe(20);
-    expect(result.items[1].quantity).toBe(1);
   });
 });

@@ -12,14 +12,12 @@ const product1 = new Product({
     id: new Id("1"),
     name: "Invoice 1 item 1",
     price: 10,
-    quantity: 1,
 });
 
 const product2 = new Product({
     id: new Id("2"),
     name: "Invoice 2 item 2",
     price: 20,
-    quantity: 1,
 });
 
 const props = {
@@ -80,11 +78,9 @@ describe("InvoiceRepository test", () => {
     expect(invoiceDb.items[0].id).toBe("1")
     expect(invoiceDb.items[0].name).toBe("Invoice 1 item 1");
     expect(invoiceDb.items[0].price).toBe(10);
-    expect(invoiceDb.items[0].quantity).toBe(1);
     expect(invoiceDb.items[1].id).toBe("2")
     expect(invoiceDb.items[1].name).toBe("Invoice 2 item 2");
     expect(invoiceDb.items[1].price).toBe(20);
-    expect(invoiceDb.items[1].quantity).toBe(1);       
   });
 
   it("should find an invoice", async () => {
@@ -109,10 +105,8 @@ describe("InvoiceRepository test", () => {
     expect(invoiceDb.items[0].id.id).toBe("1")
     expect(invoiceDb.items[0].name).toBe("Invoice 1 item 1");
     expect(invoiceDb.items[0].price).toBe(10);
-    expect(invoiceDb.items[0].quantity).toBe(1);
     expect(invoiceDb.items[1].id.id).toBe("2")
     expect(invoiceDb.items[1].name).toBe("Invoice 2 item 2");
     expect(invoiceDb.items[1].price).toBe(20);
-    expect(invoiceDb.items[1].quantity).toBe(1);
   });
 });

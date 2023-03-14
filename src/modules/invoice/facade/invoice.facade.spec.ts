@@ -19,17 +19,13 @@ const input = {
           id: "1",
           name: "Invoice 1 item 1",
           price: 10,
-          quantity: 1
       },
       {
           id: "2",
           name: "Invoice 2 item 2",
           price: 20,
-          quantity: 1
       }
-  ],
-  createdAt: new Date(),
-  updatedAt: new Date(),
+  ], 
 };
 
 describe("InvoiceFacade test", () => {
@@ -81,11 +77,9 @@ describe("InvoiceFacade test", () => {
       expect(invoiceDb.items[0].id).toBe(input.items[0].id)
       expect(invoiceDb.items[0].name).toBe(input.items[0].name);
       expect(invoiceDb.items[0].price).toBe(input.items[0].price);
-      expect(invoiceDb.items[0].quantity).toBe(input.items[0].quantity);
       expect(invoiceDb.items[1].id).toBe(input.items[1].id)
       expect(invoiceDb.items[1].name).toBe(input.items[1].name);
       expect(invoiceDb.items[1].price).toBe(input.items[1].price);
-      expect(invoiceDb.items[1].quantity).toBe(input.items[1].quantity);       
     });
   
     it("should find an invoice", async () => {
@@ -117,11 +111,9 @@ describe("InvoiceFacade test", () => {
       expect(invoiceDb.items[0].id).toBe(input.items[0].id)
       expect(invoiceDb.items[0].name).toBe(input.items[0].name);
       expect(invoiceDb.items[0].price).toBe(input.items[0].price);
-      expect(invoiceDb.items[0].quantity).toBe(input.items[0].quantity);
       expect(invoiceDb.items[1].id).toBe(input.items[1].id)
       expect(invoiceDb.items[1].name).toBe(input.items[1].name);
       expect(invoiceDb.items[1].price).toBe(input.items[1].price);
-      expect(invoiceDb.items[1].quantity).toBe(input.items[1].quantity);  
     });
 })
 

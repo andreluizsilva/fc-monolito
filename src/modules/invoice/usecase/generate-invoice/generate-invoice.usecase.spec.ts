@@ -28,13 +28,11 @@ const MockRepository = () => {
                 id: "1",
                 name: "Invoice 1 item 1",
                 price: 10,
-                quantity: 1
             },
             {
                 id: "2",
                 name: "Invoice 2 item 2",
                 price: 20,
-                quantity: 1
             }
         ],
         total: 30

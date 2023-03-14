@@ -31,7 +31,6 @@ export default class GenerateInvoiceUseCase {
                     id: new Id(item.id),               
                     name: item.name,
                     price: item.price,
-                    quantity: item.quantity,
                 })
             }),           
         }       
@@ -54,7 +53,6 @@ export default class GenerateInvoiceUseCase {
                     id: item.id.id,
                     name: item.name,
                     price: item.price,
-                    quantity: item.quantity,
                 }                
             }),
             total: invoice.total(),
