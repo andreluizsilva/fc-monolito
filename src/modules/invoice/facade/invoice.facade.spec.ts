@@ -1,7 +1,7 @@
 import { Sequelize } from "sequelize-typescript";
 import InvoiceFacadeFactory from "../factory/faced.factory";
 import InvoiceModel from "../repository/invoice.model";
-import ProductModel from "../repository/product.model";
+import ItemModel from "../repository/item.model";
 
 
 const input = {
@@ -39,7 +39,7 @@ describe("InvoiceFacade test", () => {
         sync: { force: true },
       });
   
-      await sequelize.addModels([InvoiceModel, ProductModel]);
+      await sequelize.addModels([InvoiceModel, ItemModel]);
       await sequelize.sync();
     });
   

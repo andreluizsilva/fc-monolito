@@ -24,6 +24,7 @@ export default class Product extends BaseEntity implements AggregateRoot {
     this._description = props.description;
     this._purchasePrice = props.purchasePrice;
     this._stock = props.stock;
+    this.validate();
   }
 
   get name(): string {
@@ -57,4 +58,19 @@ export default class Product extends BaseEntity implements AggregateRoot {
   set purchasePrice(purchasePrice: number) {
     this._purchasePrice = purchasePrice;
   }
+
+  validate(): void {
+    if (this._name === undefined) {
+        throw new Error("Product must have a name");
+    }
+    if (this._description === undefined) {
+      throw new Error("Product must have a description");
+    }
+    if (this._purchasePrice === undefined) {
+      throw new Error("Product must have a purchase price");
+    }
+    if (this._stock === undefined) {
+      throw new Error("Product must have a stock");
+    }
+}
 }

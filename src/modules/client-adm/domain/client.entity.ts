@@ -39,6 +39,7 @@ export default class Client extends BaseEntity implements AggregateRoot {
     this._city = props.city;
     this._state = props.state;
     this._zipCode = props.zipCode;
+    this.validate();
   }
 
   get name(): string {
@@ -75,5 +76,35 @@ export default class Client extends BaseEntity implements AggregateRoot {
 
   get zipCode(): string {
     return this._zipCode;
+  }
+
+  validate(): void {
+    if (this._name === undefined) {
+      throw new Error("Client must have a name");
+    }
+    if (this._email === undefined) {
+      throw new Error("Client must have a email");
+    }
+    if (this._document === undefined) {
+      throw new Error("Client must have a document");
+    }
+    if (this._street === undefined) {
+      throw new Error("Client must have a street");
+    }
+    if (this._number === undefined) {
+      throw new Error("Client must have a number");
+    }
+    if (this._complement === undefined) {
+      throw new Error("Client must have a complement");
+    }
+    if (this._city === undefined) {
+      throw new Error("Client must have a city");
+    }
+    if (this._state === undefined) {
+      throw new Error("Client must have a state");
+    }
+    if (this._zipCode === undefined) {
+      throw new Error("Client must have a ZipCode");
+    }
   }
 }

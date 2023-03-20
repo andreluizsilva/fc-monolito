@@ -4,7 +4,7 @@ import Invoice from "../domain/invoice.entity";
 import Product from "../domain/product.entity";
 import InvoiceGateway from "../gateway/invoice.gateway";
 import InvoiceModel from "./invoice.model";
-import ProductModel from "./product.model";
+import ItemModel from "./item.model";
 
 export default class InvoiceRepository implements InvoiceGateway {
   async generate(invoice: Invoice): Promise<void> {
@@ -30,7 +30,7 @@ export default class InvoiceRepository implements InvoiceGateway {
       updatedAt: new Date(),
     },
     {
-      include: [{ model: ProductModel }]
+      include: [{ model: ItemModel }]
     }
     );
   }
